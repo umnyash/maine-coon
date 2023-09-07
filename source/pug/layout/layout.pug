@@ -1,0 +1,16 @@
+block variables
+
+doctype html
+html.page(class= pageClass lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='css/style.min.css')
+    title= title
+    meta(name='description' content='Первый питомник мейн-кунов в Новосибирске с расширенным спектром услуг')
+    meta(name='keywords' content='Мейн-куны, мейн-кун это, купить мейн-куна, котята, коты, кошки, котенок мейн-кун, уход за мейн-куном, подготовка дома для мейн-куна')
+  body.page__body
+    .page__inner
+      main.page__content
+        block content
+    script(src='js/script.min.js')
