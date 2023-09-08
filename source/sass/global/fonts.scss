@@ -1,0 +1,28 @@
+// "Roboto Flex" cyrillic
+@font-face {
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/roboto-flex-cyrillic.woff2") format("woff2");
+}
+
+// "Roboto Flex" latin
+@font-face {
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/roboto-flex-latin.woff2") format("woff2");
+}
+
+// "Yeseva One" cyrillic-latin
+@font-face {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/yeseva-one-400-cyrillic-latin.woff2") format("woff2");
+}
