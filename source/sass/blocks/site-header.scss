@@ -1,0 +1,20 @@
+.site-header {
+  padding: 26px 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 28px 0;
+  }
+
+  @media (min-width: $laptop-width) {
+    padding: 45px 0;
+  }
+}
+
+.site-header__logo {
+  width: 52px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: 58px;
+  }
+}
