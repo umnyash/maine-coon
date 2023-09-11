@@ -1,0 +1,19 @@
+mixin socials__logo(src, alt, width, height, modifier)
+  svg.socials__logo(class= modifier width= width height= height role='img' aria-label= alt)
+    use(href= src)
+
+mixin socials__item(name, href)
+  li.socials__item
+    a.socials__link(href= href target='_blank' rel='nofollow noopener')
+      case name
+        when 'facebook'
+          +socials__logo('img/icons.svg#socials_facebook', 'Логотип в виде буквы «f».', 7, 16, 'socials__logo--facebook')
+        when 'twitter'
+          +socials__logo('img/icons.svg#socials_twitter', 'Логотип в виде птички.', 22, 16, 'socials__logo--twitter')
+        when 'vk'
+          +socials__logo('img/icons.svg#socials_vk', 'Логотип в виде букв «VK».', 25, 14, 'socials__logo--vk')
+
+mixin socials(socials)
+  ul.socials&attributes(attributes)
+    each href, name in socials
+      +socials__item(name, href)

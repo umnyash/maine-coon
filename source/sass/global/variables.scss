@@ -2,9 +2,14 @@
 $tablet-width: 768px;
 $laptop-width: 1280px;
 
+// Timings
+$little-interaction-duration: 100ms;
+$little-interaction-timing-function: linear;
+
 // Colors
 $text-color: #ffffff;
 $text-additional-color: #ddd0c3;
+$text-additional-color-2: #fdf2e6;
 $background-color-1: #1f1c1d;
 $background-color-2: #181617;
 $background-color-3: #151313;

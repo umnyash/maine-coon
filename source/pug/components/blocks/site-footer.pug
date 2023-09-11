@@ -1,0 +1,9 @@
+include ../../data/socials
+
+mixin site-footer
+  footer.site-footer&attributes(attributes)
+    .site-footer__inner
+      +logo(class='site-footer__logo')
+      +socials(socials)(class='site-footer__socials socials--sizes_m-s-s socials--accent')
+      p.site-footer__address Новосибирск, Пушкинский проспект, 19
+      a.site-footer__phone(href='tel:+73839006465') +7 (383) 900-64-65

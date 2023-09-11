@@ -1,0 +1,250 @@
+.socials {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.socials__link {
+  display: block;
+  color: $text-color;
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &:active {
+    color: fade-out($accent-color, 0.3);
+  }
+}
+
+.socials__logo {
+  display: block;
+  height: auto;
+  fill: currentColor;
+  transition: fill $little-interaction-duration $little-interaction-timing-function;
+}
+
+// Иконки фирменного цвета (в обычном состоянии).
+.socials--accent .socials__link {
+  color: $accent-color;
+
+  &:hover {
+    color: $text-color;
+  }
+
+  &:active {
+    color: fade-out($text-color, 0.3);
+  }
+}
+
+// Социальные иконки с такими размерами есть в подвале сайта (site-footer)
+.socials--sizes_m-s-s { // (1)
+  gap: 20px;
+
+  .socials__logo--facebook {
+    width: 7px;
+  }
+
+  .socials__logo--twitter {
+    width: 22px;
+  }
+
+  .socials__logo--vk {
+    width: 25px;
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 9px;
+
+    .socials__logo--facebook {
+      width: 7px;
+    }
+
+    .socials__logo--twitter {
+      width: 20px;
+    }
+
+    .socials__logo--vk {
+      width: 21px;
+    }
+  }
+}
+
+// Социальные иконки с такими размерами есть в секции reviews
+.socials--sizes_xs-xxs-xxs { // (1)
+  .socials__logo--facebook {
+    width: 5px;
+  }
+
+  .socials__logo--twitter {
+    width: 16px;
+  }
+
+  .socials__logo--vk {
+    width: 18px;
+  }
+
+  @media (min-width: $tablet-width) {
+    .socials__logo--facebook {
+      width: 5px;
+    }
+
+    .socials__logo--twitter {
+      width: 14px;
+    }
+
+    .socials__logo--vk {
+      width: 13px;
+    }
+  }
+}
+
+// Социальные иконки с такими размерами есть в секции team
+.socials--sizes_xs-s-s { // (1)
+  gap: 15px;
+
+  .socials__logo--facebook {
+    width: 5px;
+  }
+
+  .socials__logo--twitter {
+    width: 16px;
+  }
+
+  .socials__logo--vk {
+    width: 18px;
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 9px;
+
+    .socials__logo--facebook {
+      width: 7px;
+    }
+
+    .socials__logo--twitter {
+      width: 20px;
+    }
+
+    .socials__logo--vk {
+      width: 21px;
+    }
+  }
+}
+
+// Социальные иконки с такими размерами есть в секции hero
+.socials--sizes_xxs { // (1)
+  gap: 12px;
+
+  .socials__logo--facebook {
+    width: 5px;
+  }
+
+  .socials__logo--twitter {
+    width: 15px;
+  }
+
+  .socials__logo--vk {
+    width: 13px;
+  }
+}
+
+// Такие социальные иконки с рамками есть в секции reviews
+.socials--bordered {
+  gap: 15px;
+
+  .socials__link {
+    position: relative;
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+
+    &::before { // (2)
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid currentColor;
+      opacity: 0.27;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 17px;
+  }
+}
+
+.socials--reversed { // (3)
+  flex-direction: row-reverse;
+}
+
+.socials--grid_h-h-v { // (4)
+  @media (min-width: $laptop-width) {
+    flex-direction: column;
+
+    &.socials--reversed {
+      flex-direction: column-reverse;
+    }
+
+    &.socials--sizes_xxs {
+      gap: 15px;
+    }
+  }
+}
+
+/* (1)
+ * Что за куча модификаторов??
+ * В макете есть 3 версии страницы: мобильная, планшетная, десктопная.
+ * Иконки социальных сетей иногда имеют разные размеры и отступы
+ * на разной ширине и в разных блоках.
+ *
+ * Например, ширина иконки VK:
+ *                        Mobile      Tablet      Laptop
+ * в hero-section         скрыта        13          13
+ * в team-section           18          21          21
+ * в reviews-section        18          13          13
+ * в футере                 25          21          21
+ *
+ * Сложно придумать названия простых модификаторов...
+ * Иконки "большие" или "маленькие"? Как их сравнить? %-)
+ *
+ * Итого имеются следующие значения ширины: 13,  18, 21, 25,
+ * которые можно соотнести с размерами      xxs, xs, s,  m.
+ * Оперируя этими названия можно составить следующие модификаторы:
+ *                        Mobile      Tablet      Laptop
+ * в hero-section           xxs        xxs         xxs
+ * в team-section           xs          s           s
+ * в reviews-section        xs         xxs         xxs
+ * в футере                 m           s           s
+ *
+ * Зачем в модификатор записывать все три размера, если два из них повторяются?
+ * Например, вместо sizes_m-s-s можно записать sizes_m-s, что означало бы,
+ * что сначала иконки имеют размер m, а потом размер s?
+ * Такая запись нужна, чтобы можно было отличить m-s-s от m-m-s.
+ * Сейчас в дизайне нет иконок ещё и с размерами m-m-s, но от дизайнера,
+ * который это сделал, можно ожидать подобного на новых страницах.
+ *
+ * Такие модификаторы – хороший вариант систематизировать небрежный дизайн.
+ */
+
+/* (2)
+ * Рамка сделана псевдоэлементом, чтобы она могла наследовать цвет текста
+ * и изменить для себя уровень его непрозрачности.
+ * Хотелось бы просто задать рамку ссылке с цветом fade-out(currentColor, 0.73),
+ * но это так не работает.
+ */
+
+/* (3)
+ * Модификатор reversed пока что не используется отдельно.
+ * Миксуется с модификатором изменения сетки (--grid_h-h-v).
+ */
+
+/* (4)
+ * В макете имеются иконки, расположенные горизонтально (h) на планшентной ширине.
+ * На мобильной ширине они скрыты, но предположу, что расположены также.
+ * На десктопной ширине иконки располагаются вертикально (v).
+ * Модификатор составлен по аналогичному принципу с модификаторами размеров.
+ * При необходимости, можно дописать правила для модификаторов h-v-v, v-h-h и т.п.
+ */
