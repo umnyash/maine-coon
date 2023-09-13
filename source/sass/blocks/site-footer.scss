@@ -86,7 +86,7 @@
   }
 
   &:active {
-    color: fade-out($accent-color, 0.3);
+    color: rgba($accent-color, 0.7);
   }
 
   @media (max-width: ($tablet-width - 1)) {

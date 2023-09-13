@@ -15,7 +15,7 @@
   }
 
   &:active {
-    color: fade-out($accent-color, 0.3);
+    color: rgba($accent-color, 0.7);
   }
 }
 
@@ -35,7 +35,7 @@
   }
 
   &:active {
-    color: fade-out($text-color, 0.3);
+    color: rgba($text-color, 0.7);
   }
 }
 
