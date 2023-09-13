@@ -180,8 +180,8 @@
   flex-direction: row-reverse;
 }
 
-.socials--grid_h-h-v { // (4)
-  @media (min-width: $laptop-width) {
+.socials--grid_h-h-h-v { // (4)
+  @media (min-width: $desktop-width) {
     flex-direction: column;
 
     &.socials--reversed {
