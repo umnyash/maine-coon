@@ -1,0 +1,129 @@
+.hero {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  row-gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: 1fr 46px;
+    grid-template-columns: 40px 1fr 40px;
+    row-gap: 0;
+    line-height: 1.5;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-template-rows: 148px 1fr 64px;
+    grid-template-columns: 1fr minmax(0, 203px) 960px minmax(0, 203px) 1fr;
+  }
+}
+
+.hero__text-content {
+  grid-column: 2 / 3;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    z-index: 1;
+    grid-row: 1 / 2;
+    max-width: 350px;
+    align-content: end;
+    justify-items: start;
+    text-align: left;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    align-content: start;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: relative;
+  }
+}
+
+.hero__heading {
+  margin: 0 0 17px;
+}
+
+.hero__location {
+  order: -1;
+  margin: 0 0 6px;
+  color: $accent-color;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 20px;
+  }
+}
+
+.hero__text {
+  margin: 0 0 16px;
+  color: $accent-color;
+
+  @media (min-width: $tablet-width) {
+    max-width: 90%;
+  }
+}
+
+.hero__button {
+  min-width: 142px;
+  margin: 19px 0 0;
+
+  @media (min-width: $tablet-width) {
+    min-width: 200px;
+    margin: 35px 0 0;
+  }
+}
+
+.hero__socials-wrapper {
+  @media (max-width: ($tablet-width - 1)) {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 60px 0 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    bottom: 0;
+    left: -125px;
+    display: grid;
+    margin: 0;
+    row-gap: 32px;
+    justify-items: center;
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 78px;
+      background-color: rgba($text-color, 0.6);
+    }
+  }
+}
+
+.hero__socials {
+  margin: 0;
+}
+
+.hero__image-wrapper {
+  grid-column: 1 / -1;
+  place-self: end;
+
+  @media (min-width: $tablet-width) {
+    grid-row: 1 / 3;
+    max-width: 440px;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-row: 1 / 4;
+    grid-column: 3 / 5;
+    max-width: 700px;
+  }
+}
+
+.hero__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

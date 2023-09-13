@@ -1,0 +1,21 @@
+.heading {
+  font-family: $additional-font-family;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 400;
+
+  &--big {
+    font-size: 36px;
+    line-height: 41px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 36px;
+    line-height: 41px;
+
+    &--big {
+      font-size: 52px;
+      line-height: 60px;
+    }
+  }
+}

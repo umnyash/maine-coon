@@ -1,20 +1,33 @@
 .site-header {
-  padding: 26px 0;
+  padding: 26px 0 0;
+  background-color: $background-color-2;
 
   @media (min-width: $tablet-width) {
-    padding: 28px 0;
+    padding: 28px 0 0;
   }
 
   @media (min-width: $laptop-width) {
-    padding: 45px 0;
+    padding: 34px 0 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: relative;
   }
 }
 
 .site-header__logo {
   width: 52px;
-  margin: 0 auto;
+  margin: 0 auto 52px;
 
   @media (min-width: $tablet-width) {
     width: 58px;
+    margin: 0 auto 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

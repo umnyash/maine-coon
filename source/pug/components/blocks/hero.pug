@@ -1,0 +1,15 @@
+include ../../data/socials
+
+mixin hero
+  .hero
+    .hero__text-content
+      h1.hero__heading.heading.heading--big Питомник #[nobr Мейн-Кунов]
+      p.hero__location Новосибирск
+      p.hero__text Первый питомник с&nbsp;расширенным спектром услуг
+      +button('a', 'Смотреть котиков', '', '#!')(class='hero__button')
+      .hero__socials-wrapper
+        +socials(socials)(class='hero__socials socials--sizes_xxs socials--reversed socials--grid_h-h-h-v')
+    picture.hero__image-wrapper
+      source(media='(min-width: 1280px)' srcset='img/hero/hero-laptop.webp, img/hero/hero-laptop@2x.webp 2x')
+      source(media='(min-width: 768px)' srcset='img/hero/hero-tablet.webp, img/hero/hero-tablet@2x.webp 2x')
+      img.hero__image(src='img/hero/hero.webp' srcset='img/hero/hero@2x.webp 2x' alt='Пушистый рыжий мейн-кун.')

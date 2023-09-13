@@ -7,6 +7,11 @@
   font-weight: 300;
   color: $text-color;
   background-color: $background-color-1;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 1.64;
+  }
 }
 
 .page__inner {
@@ -16,11 +21,4 @@
   grid-template-rows: 1fr auto;
   grid-template-columns: 100%;
   overflow-y: auto;
-}
-
-.page__site-header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
 }
