@@ -1,0 +1,11 @@
+.index-page__about {
+  margin: 0 0 56px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 95px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 108px;
+  }
+}

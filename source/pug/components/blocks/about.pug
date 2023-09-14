@@ -1,0 +1,15 @@
+mixin about
+  section.about&attributes(attributes)
+    .about__inner
+      h2.about__heading.heading Особенности породы
+      p.about__lead Мейн-Кун&nbsp;-&nbsp;это порода, которая вызывает к&nbsp;себе уважение. Приобретая в&nbsp;свой дом этого питомца, вы получите #[br.hidden.hidden--m-l-d] умное животное, которому нет равных
+      .about__presentation
+        picture.about__img-wrapper
+          source(media='(min-width: 1280px)' srcset='img/about/about-laptop.webp, img/about/about-laptop@2x.webp 2x')
+          source(media='(min-width: 768px)' srcset='img/about/about-tablet.webp, img/about/about-tablet@2x.webp 2x')
+          img.about__image(src='img/about/about.webp' srcset='img/about/about@2x.webp 2x' alt='Пушистый рыжий мейн-кун стоит с поднятым хвостом.')
+        ul.about__list
+          li.about__item.about__item--position_left-right Легко уживается в&nbsp;семьях с&nbsp;детьми #[br.hidden.hidden--m-t] или&nbsp;другими животными
+          li.about__item Выполняет команды как дрессированная собака
+          li.about__item Вес может достигать 12&nbsp;кг, а&nbsp;длина 1&nbsp;м
+          li.about__item.about__item--position_left-right Внешний вид этой кошки похож на&nbsp;дикую рысь

@@ -1,0 +1,214 @@
+.about {
+  text-align: center;
+}
+
+.about__inner {
+  padding: 0 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 40px;
+  }
+}
+
+.about__heading {
+  margin: 0 0 24px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 21px;
+  }
+}
+
+.about__lead {
+  max-width: 500px;
+  margin: 0 auto 20px;
+  color: $accent-color;
+
+  @media (min-width: $laptop-width) {
+    max-width: 752px;
+  }
+}
+
+.about__presentation {
+  position: relative;
+  margin: 50px 0 0;
+
+  &::before {
+    --offset: 23px;
+
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    width: 280px;
+    height: 280px;
+    border: 1px solid $accent-color;
+    border-radius: 50%;
+    margin: 0 auto 36px;
+    background-image:
+      radial-gradient(
+        closest-side,
+        $background-color-3 calc(100% - var(--offset)),
+        transparent calc(100% - var(--offset) + 1px)
+      );
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 81px auto 0;
+
+    &::before {
+      --offset: 35px;
+
+      width: 416px;
+      height: 425px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 73px auto 0;
+
+    &::before {
+      --offset: 56px;
+
+      width: 632px;
+      height: 632px;
+    }
+  }
+}
+
+.about__img-wrapper {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  width: 268px;
+  height: 290px;
+  transform: translateX(-50%);
+
+  @media (min-width: $tablet-width) {
+    top: -33px;
+    left: calc(50% + 12px);
+    width: 400px;
+    height: 435px;
+  }
+
+  @media (min-width: $laptop-width) {
+    top: -51px;
+    left: calc(50% + 16px);
+    width: 602px;
+    height: 648px;
+  }
+}
+
+.about__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+
+.about__list {
+  display: grid;
+  max-width: 98%;
+  padding: 0;
+  margin: 0;
+  row-gap: 20px;
+  list-style: none;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.about__item {
+  display: flex;
+  gap: 10px;
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0.3em 0 0;
+    background-color: $accent-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    gap: 12px;
+
+    &::before {
+      width: 10px;
+      height: 10px;
+      margin: 0.2em 0 0;
+    }
+
+    &--position_left-right { // (1)
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    &:nth-child(1) {
+      top: 91px;
+      right: calc(50% + 171px);
+      max-width: 178px;
+    }
+
+    &:nth-child(2) {
+      top: 163px;
+      left: calc(50% + 198px);
+      max-width: 150px;
+    }
+
+    &:nth-child(3) {
+      top: 313px;
+      left: calc(50% + 172px);
+      max-width: 135px;
+    }
+
+    &:nth-child(4) {
+      top: 284px;
+      right: calc(50% + 187px);
+      max-width: 178px;
+    }
+  }
+
+  @media (min-width: $laptop-width) {
+    gap: 20px;
+
+    &::before {
+      width: 15px;
+      height: 15px;
+    }
+
+    &:nth-child(1) {
+      top: 138px;
+      right: calc(50% + 260px);
+      max-width: 300px;
+    }
+
+    &:nth-child(2) {
+      top: 243px;
+      left: calc(50% + 302px);
+      max-width: 260px;
+    }
+
+    &:nth-child(3) {
+      top: 466px;
+      left: calc(50% + 263px);
+      max-width: 200px;
+    }
+
+    &:nth-child(4) {
+      top: 423px;
+      right: calc(50% + 285px);
+      max-width: 230px;
+    }
+  }
+}
+
+/* (1)
+ * Модификатор position_left-right означает, что сначала позиция была left (по умолчанию),
+ * а потом right (с планшетной ширины).
+ * Используются два слова (left-right) на случай, если появится модификация, которая
+ * будет изначально располагаться с правой стороны и тогда можно будет записать position_right.
+ */
