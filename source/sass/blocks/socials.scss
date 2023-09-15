@@ -9,6 +9,7 @@
 .socials__link {
   display: block;
   color: $text-color;
+  transition: color $little-interaction-duration $little-interaction-timing-function;
 
   &:hover {
     color: $accent-color;
@@ -23,7 +24,6 @@
   display: block;
   height: auto;
   fill: currentColor;
-  transition: fill $little-interaction-duration $little-interaction-timing-function;
 }
 
 // Иконки фирменного цвета (в обычном состоянии).
