@@ -1,0 +1,23 @@
+.previews {
+  display: grid;
+  padding: 0;
+  list-style: none;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+  }
+
+  @media (min-width: $laptop-width) {
+    gap: 44px;
+  }
+}
+
+@media (min-width: $laptop-width) {
+  .previews__item:nth-child(1),
+  .previews__item:nth-child(3) {
+    order: -1;
+  }
+}

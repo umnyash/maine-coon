@@ -1,0 +1,5 @@
+mixin articles(articles)
+  section.articles
+    .articles__inner
+      h2.articles__heading.heading!= articles.heading
+      +previews(articles.previews)(class='articles__list')

@@ -1,0 +1,103 @@
+.preview {
+  position: relative;
+  display: grid;
+  padding: 0 0 0 24px;
+  border: 1px solid $accent-color;
+  grid-template-rows: 20px auto 1fr 20px;
+  grid-template-columns: 1fr auto;
+  column-gap: 8px;
+  text-align: left;
+  font-size: 14px;
+  background-color: $background-translucent-color;
+
+  @media (min-width: $tablet-width) {
+    min-height: 168px;
+    padding: 0 0 0 48px;
+    grid-template-rows: 35px auto 1fr 23px;
+    column-gap: 44px;
+  }
+
+  @media (min-width: $laptop-width) {
+    min-height: 165px;
+    padding: 0 0 0 57px;
+  }
+}
+
+.preview__heading {
+  grid-row: 2 / 3;
+  margin: 0 0 10px;
+  color: $accent-color;
+  font-size: 18px;
+  line-height: 22px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 8px;
+  }
+}
+
+.preview__text {
+  grid-row: 3 / 4;
+  margin: 0;
+}
+
+.preview__link {
+  grid-row: 1 / 5;
+  grid-column: 2 / 3;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  border-left: 1px solid $accent-color;
+  background-color: $accent-color;
+  transition:
+    border-color $little-interaction-duration $little-interaction-timing-function,
+    background-color $little-interaction-duration $little-interaction-timing-function;
+
+  &::before {
+    content: "";
+    width: 10px;
+    height: 20px;
+    background-color: $text-color;
+    mask-image: url("../img/icons.svg#controls_right-arrow-without-tail");
+    transition:
+      background-color $little-interaction-duration $little-interaction-timing-function,
+      transform $little-interaction-duration $little-interaction-timing-function;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    border-left-color: transparent;
+
+    &::before {
+      background-color: $accent-color;
+      transform: translateX(4px);
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 58px;
+
+    &::before {
+      width: 12px;
+      height: 32px;
+      transform: scaleY(0.7);
+    }
+
+    &:active::before {
+      transform: translateX(4px) scaleY(0.7);
+    }
+  }
+}

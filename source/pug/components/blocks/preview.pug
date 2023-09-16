@@ -1,0 +1,6 @@
+mixin preview(preview)
+  li.preview&attributes(attributes)
+    h3.preview__heading!= preview.heading
+    p.preview__text!= preview.text
+    a.preview__link(href= preview.href)
+      span.visually-hidden Подробнее

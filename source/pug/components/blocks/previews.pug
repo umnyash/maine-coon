@@ -1,0 +1,4 @@
+mixin previews(previews)
+  ul.previews&attributes(attributes)
+    each preview in previews
+      +preview(preview)(class='previews__item')

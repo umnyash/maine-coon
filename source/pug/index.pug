@@ -4,6 +4,10 @@ block variables
   - var title = 'Питомник Мейн-Кунов'
   - var pageClass = 'index-page'
 
+block data
+  include data/articles
+
 block content
   +about(class='index-page__about')
   +features
+  +articles(articles)
