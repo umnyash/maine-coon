@@ -1,0 +1,77 @@
+.slider-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  visibility: hidden;
+}
+
+.slider-navigation__button {
+  position: relative;
+  width: 10px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  color: $accent-color;
+  background-color: transparent;
+  visibility: visible;
+  transition: color $little-interaction-duration $little-interaction-timing-function;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -14px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 100%;
+    background-color: currentColor;
+    mask-image: url("../img/icons.svg#controls_right-arrow-without-tail");
+  }
+
+  &:hover {
+    color: $text-color;
+  }
+
+  &:active {
+    color: rgba($text-color, 0.7);
+  }
+
+  &--prev {
+    transform: scale(-1);
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 16px;
+    height: 32px;
+
+    &::before {
+      inset: -24px;
+    }
+  }
+
+  @media (min-width: $laptop-width) {
+    &::before {
+      inset: -24px -48px;
+    }
+  }
+}
+
+.slider-navigation--look_d-l-d .slider-navigation__button { // (1)
+  @media (min-width: $tablet-width) and (max-width: ($laptop-width - 1)) {
+    width: 60px;
+    height: 18px;
+
+    &::after {
+      mask-image: url("../img/icons.svg#controls_right-long-arrow");
+    }
+  }
+}
+
+/* (1)
+ * Вид иконки-стрелки на разной ширине.
+ * Сначала default (d) на мобильной ширине,
+ * затем long (l) на планшетной и снова default (d) на лэптопной.
+ */

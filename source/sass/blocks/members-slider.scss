@@ -1,0 +1,154 @@
+.members-slider {
+  position: relative;
+  text-align: center;
+  color: rgba($text-color, 0.72);
+
+  @media (min-width: $tablet-width) {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.54;
+  }
+}
+
+.members-slider__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.members-slider__slide {
+  position: relative;
+  display: grid;
+  height: auto;
+
+  @media (min-width: $laptop-width) {
+    min-height: 400px;
+  }
+}
+
+.members-slider__slide-text-content {
+  display: flex;
+  padding: 84px 11px 16px;
+  margin: 63px 0 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $background-color-1;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    padding: 94px 100px 98px 130px;
+    border: 1px solid $accent-color;
+    margin: 0 0 93px;
+    align-items: flex-start;
+    background-color: transparent;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 24px;
+      background-color: $background-color-1;
+    }
+  }
+
+  @media (min-width: $laptop-width) {
+    padding: 91px 100px 91px 123px;
+    margin: 0 78px 0 447px;
+
+    &::before {
+      inset: 23px 37px 23px 23px;
+    }
+  }
+}
+
+.members-slider__slide-name {
+  margin: 0 0 3px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  color: $accent-color;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 5px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.members-slider__slide-role {
+  margin: 0 0 16px;
+  font-weight: 400;
+  color: $accent-color;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 24px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 22px;
+  }
+}
+
+.members-slider__slide-description {
+  margin: 0 0 25px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 47px;
+  }
+}
+
+.members-slider__slide-socials {
+  margin: auto 0 0;
+}
+
+.members-slider__slide-image-wrapper {
+  position: absolute;
+  inset: 0 auto auto 50%;
+  width: 126px;
+  height: 126px;
+  background-color: $background-color-1;
+  transform: translateX(-50%);
+
+  @media (min-width: $tablet-width) {
+    inset: auto 57px 0 auto;
+    width: 208px;
+    height: 208px;
+    transform: none;
+  }
+
+  @media (min-width: $laptop-width) {
+    inset: 0 auto auto 134px;
+    width: 360px;
+    height: 356px;
+  }
+}
+
+.members-slider__slide-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.members-slider__navigation {
+  position: absolute;
+  inset: 63px auto auto 50%;
+  z-index: 1;
+  width: 176px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: $tablet-width) {
+    inset: auto 15px 0 auto;
+    width: 294px;
+    transform: none;
+  }
+
+  @media (min-width: $laptop-width) {
+    inset: 50% 0 auto 0;
+    width: auto;
+    transform: translateY(-50%);
+  }
+}

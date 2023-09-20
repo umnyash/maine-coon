@@ -1,0 +1,7 @@
+include ../../data/reviews
+
+mixin reviews
+  section.reviews&attributes(attributes)
+    .reviews__inner
+      h2.reviews__heading.heading Отзывы
+      +reviews-slider(reviews)(class='reviews__slider')

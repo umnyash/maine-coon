@@ -1,0 +1,15 @@
+mixin members-slider(members)
+  div.members-slider.swiper&attributes(attributes)
+    ul.members-slider__list.swiper-wrapper
+      each member in members
+        li.members-slider__slide.swiper-slide
+          .members-slider__slide-text-content
+            h3.members-slider__slide-name!= member.name
+            p.members-slider__slide-role!= member.role
+            p.members-slider__slide-description!= member.description
+            +socials(member.socials)(class='members-slider__slide-socials socials--sizes_xs-s-s')
+          picture.members-slider__slide-image-wrapper
+            source(media='(min-width: 1280px)' srcset= `${member.laptopImage}, ${member.laptopImage2x} 2x`)
+            source(media='(min-width: 768px)' srcset= `${member.tabletImage}, ${member.tabletImage2x} 2x`)
+            img.members-slider__slide-image(src= member.image srcset= `${member.image2x} 2x` alt='Фотография человека.')
+    +slider-navigation(class='members-slider__navigation')

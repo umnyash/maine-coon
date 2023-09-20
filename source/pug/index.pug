@@ -6,8 +6,11 @@ block variables
 
 block data
   include data/articles
+  include data/team
 
 block content
   +about(class='index-page__about')
   +features
   +articles(articles)
+  +members(team)(class='index-page__members')
+  +reviews(class='index-page__reviews')

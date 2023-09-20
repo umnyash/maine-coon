@@ -1,0 +1,16 @@
+mixin reviews-slider(reviews)
+  div.reviews-slider.swiper&attributes(attributes)
+    ul.reviews-slider__list.swiper-wrapper
+      each review in reviews
+        li.reviews-slider__slide.swiper-slide
+          .reviews-slider__slide-text-content
+            h3.reviews-slider__slide-name!= review.name
+            blockquote.reviews-slider__slide-text!= review.text
+            .reviews-slider__slide-footer
+              p.reviews-slider__slide-date!= new Date(Date.parse(review.date)).toLocaleString('ru', {day: 'numeric', month: 'long', year: 'numeric'}).slice(0, -3)
+              +socials(review.socials)(class='reviews-slider__slide-socials socials--sizes_xs-xxs-xxs socials--accent socials--bordered')
+          picture.reviews-slider__slide-image-wrapper
+            source(media='(min-width: 1280px)' srcset= `${review.laptopImage}, ${review.laptopImage2x} 2x`)
+            source(media='(min-width: 768px)' srcset= `${review.tabletImage}, ${review.tabletImage2x} 2x`)
+            img.reviews-slider__slide-image(src= review.image srcset= `${review.image2x} 2x` alt='Фотография человека.')
+    +slider-navigation(class='reviews-slider__navigation slider-navigation--look_d-l-d')

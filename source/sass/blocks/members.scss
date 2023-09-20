@@ -1,0 +1,67 @@
+.members {
+  padding: 54px 0 60px;
+  text-align: center;
+  background-color: $background-color-2;
+
+  @media (min-width: $tablet-width) {
+    padding: 85px 0 94px;
+  }
+
+  @media (min-width: $laptop-width) {
+    padding: 85px 0 72px;
+  }
+}
+
+.members__inner {
+  max-width: 1184px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 48px;
+  }
+}
+
+.members__heading {
+  margin: 0 0 24px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 21px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 20px;
+  }
+}
+
+.members__lead {
+  max-width: 540px;
+  padding: 0 12px; // (1)
+  margin: 0 auto 20px;
+  color: $accent-color;
+
+  @media (min-width: $tablet-width) {
+    max-width: 580px;
+    padding: 0;
+  }
+}
+
+.members__slider {
+  margin: 34px auto 0;
+  max-width: 480px;
+
+  @media (min-width: $tablet-width) {
+    margin: 24px auto 0;
+    max-width: 880px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 21px auto 0;
+    max-width: none;
+  }
+}
+
+/* (1)
+ * Отступы по краям, чтобы оставить для текста меньше места, чтобы он переносился
+ * в нужном месте для соответствия макету.
+ */

@@ -9,6 +9,7 @@ html.page(class= pageClass lang='ru')
     link(rel='preload' href='fonts/roboto-flex-cyrillic.woff2' as='font' type='font/woff2' crossorigin)
     link(rel='preload' href='fonts/roboto-flex-latin.woff2' as='font' type='font/woff2' crossorigin)
     link(rel='preload' href='fonts/yeseva-one-400-cyrillic-latin.woff2' as='font' type='font/woff2' crossorigin)
+    link(rel='stylesheet' href='vendor/swiper/swiper-bundle.min.css')
     link(rel='stylesheet' href='css/style.min.css')
     title= title
     link(rel='icon' href='favicon.ico')
@@ -24,4 +25,5 @@ html.page(class= pageClass lang='ru')
       main.page__content
         block content
       +site-footer
+    script(src='vendor/swiper/swiper-bundle.min.js')
     script(src='js/script.min.js')

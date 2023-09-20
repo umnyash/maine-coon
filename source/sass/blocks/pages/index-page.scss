@@ -9,3 +9,28 @@
     margin: 0 0 108px;
   }
 }
+
+.index-page__members {
+  margin: 0 0 54px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 138px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 74px;
+  }
+}
+
+
+.index-page__reviews {
+  margin: 0 0 60px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 87px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 112px;
+  }
+}

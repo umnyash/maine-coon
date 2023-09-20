@@ -1,0 +1,6 @@
+mixin members(members)
+  section.members&attributes(attributes)
+    .members__inner
+      h2.members__heading.heading!= members.heading
+      p.members__lead!= members.description
+      +members-slider(members.list)(class='members__slider')
