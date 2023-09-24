@@ -1,0 +1,8 @@
+include ../../data/faq
+
+mixin faq
+  section.faq&attributes(attributes)
+    .faq__inner
+      h2.faq__heading.heading Вопрос-Ответ
+      p.faq__lead Мы ответим на самые популярные ваши вопросы
+      +folds(faq)(class='faq__list folds--numbered_t-l-d')

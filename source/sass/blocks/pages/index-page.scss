@@ -22,6 +22,18 @@
   }
 }
 
+.index-page__faq {
+  margin: 0 0 55px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 84px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 92px;
+  }
+}
+
 
 .index-page__reviews {
   margin: 0 0 60px;

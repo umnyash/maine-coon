@@ -1,0 +1,49 @@
+.faq {
+  text-align: center;
+}
+
+.faq__inner {
+  max-width: 908px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 55px;
+  }
+}
+
+.faq__heading {
+  margin: 0 0 24px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 18px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 20px;
+  }
+}
+
+.faq__lead {
+  max-width: 540px;
+  padding: 0 40px; // (1)
+  margin: 0 auto 20px;
+  color: $accent-color;
+
+  @media (min-width: $tablet-width) {
+    max-width: 580px;
+  }
+}
+
+.faq__list {
+  margin: 35px 0 0;
+
+  @media (min-width: $tablet-width) {
+    margin: 52px 0 0;
+  }
+}
+
+/* (1)
+ * Отступы по краям, чтобы оставить для текста меньше места, чтобы он переносился
+ * в нужном месте для соответствия макету.
+ */

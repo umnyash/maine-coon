@@ -1,0 +1,190 @@
+.folds {
+  display: grid;
+  padding: 0;
+  list-style: none;
+  gap: 30px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: $text-additional-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    gap: 26px;
+  }
+
+  @media (min-width: $laptop-width) {
+    gap: 36px;
+  }
+}
+
+.folds__heading {
+  margin: 0;
+  font: inherit;
+
+  @media (min-width: $tablet-width) {
+    line-height: 19px;
+  }
+}
+
+.folds__button {
+  position: relative;
+  display: grid;
+  width: 100%;
+  padding: 10px 0 8px 14px;
+  border: 1px solid $accent-color;
+  grid-template-columns: 1fr 42px;
+  column-gap: 12px;
+  align-items: center;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  background-image: linear-gradient($accent-color, $accent-color);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 42px 100%;
+
+  &::before,
+  &::after {
+    content: "";
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    justify-self: center;
+    width: 16px;
+    height: 2px;
+    background-color: $text-color;
+  }
+
+  &::after {
+    transform: rotate(-90deg);
+    transition: transform $drawer-timing-duration $drawer-timing-function;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 77px;
+    padding: 21px 0 16px 29px;
+    grid-template-columns: 1fr 72px;
+    column-gap: 23px;
+    background-size: 72px 100%;
+
+    &::before,
+    &::after {
+      width: 20px;
+    }
+  }
+
+  @media (min-width: $laptop-width) {
+    padding: 46px 0 42px 42px;
+    grid-template-columns: 1fr 104px;
+    column-gap: 42px;
+    background-size: 104px 100%;
+  }
+}
+
+.folds__content-wrapper {
+  position: relative;
+  overflow: hidden;
+  transition: height $drawer-timing-duration $drawer-timing-function;
+}
+
+.folds__content {
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 11px 14px 9px;
+  border: 1px solid $accent-color;
+  border-top: none;
+  font-weight: 300;
+  visibility: hidden;
+  transition: visibility $drawer-timing-duration step-end;
+
+  @media (min-width: $tablet-width) {
+    padding: 26px 145px 24px 28px;
+    line-height: 1.53;
+  }
+
+  @media (min-width: $laptop-width) {
+    padding: 39px 208px 40px 42px;
+  }
+}
+
+.folds__content p {
+  margin: 10px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 24px 0;
+  }
+}
+
+.folds__item:not(.folds__item--open) .folds__content-wrapper {
+  height: 0 !important; // stylelint-disable-line
+}
+
+.folds__item--open {
+  .folds__button::after {
+    transform: none;
+  }
+
+  .folds__content {
+    visibility: visible;
+    transition-timing-function: step-start;
+  }
+}
+
+.folds--numbered_t-l-d { // (1)
+  @media (min-width: $tablet-width) {
+    counter-reset: folds;
+
+    .folds__item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 30px;
+      align-items: center;
+      counter-increment: folds;
+    }
+
+    .folds__item::before {
+      content: "0" counter(folds);
+      grid-column: 1 / 2;
+      min-width: 58px;
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 700;
+      color: $accent-color;
+    }
+
+    .folds__item:nth-child(n + 10)::before {
+      content: counter(folds);
+    }
+
+    .folds__content-wrapper {
+      grid-column: 2 / 3;
+    }
+  }
+
+  @media (min-width: $laptop-width) {
+    .folds__item {
+      column-gap: 36px;
+
+      &::before {
+        font-size: 70px;
+      }
+    }
+  }
+}
+
+/*
+ * Нумерованный на планшетной (t), лэптопной (l) и десктопной (d) ширине.
+ * Иными словами – на всех, кроме мобильной (m).
+ */

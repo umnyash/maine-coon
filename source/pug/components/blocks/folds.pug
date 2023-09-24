@@ -1,0 +1,8 @@
+mixin folds(folds)
+  ul.folds&attributes(attributes)
+    each fold, index in folds
+      li.folds__item(class= index === 0 ? 'folds__item--open' : false)
+        h3.folds__heading
+          button.folds__button(type='button' aria-expanded= index === 0 ? 'true' : 'false')!= fold.heading
+        .folds__content-wrapper
+          .folds__content!= fold.content
