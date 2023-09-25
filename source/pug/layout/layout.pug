@@ -21,7 +21,7 @@ html.page(class= pageClass lang='ru')
   body.page__body
     include ../components/components
     .page__inner
-      +site-header(class='page__site-header')
+      +site-header(class=`${pageClass}__site-header`)
       main.page__content
         block content
       +site-footer

@@ -1,3 +1,15 @@
+.index-page__site-header {
+  margin: 0 0 54px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 102px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 224px;
+  }
+}
+
 .index-page__about {
   margin: 0 0 56px;
 
