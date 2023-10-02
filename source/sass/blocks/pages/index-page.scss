@@ -10,6 +10,18 @@
   }
 }
 
+.index-page__show {
+  margin: 0 0 54px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 93px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin: 0 0 84px;
+  }
+}
+
 .index-page__about {
   margin: 0 0 56px;
 

@@ -1,0 +1,37 @@
+include cat-show-gallery
+
+-
+  var slidesMinCount = 5; //- (1)
+
+  var getImagesForSlides = (images) =>
+    (images.length < slidesMinCount) ? [...images, ...images] : images; //- (2)
+
+  var catShowGallerTabs = [
+    {
+      id: 'male-cats',
+      title: 'Коты',
+      images: getImagesForSlides(maleCats), //- (2)
+    },
+    {
+      id: 'female-cats',
+      title: 'Кошки',
+      images: getImagesForSlides(femaleCats), //- (2)
+    },
+    {
+      id: 'kittens',
+      title: 'Котята',
+      images: getImagesForSlides(kittens), //- (2)
+    },
+  ];
+
+//- (1)
+  На планшетной ширене слайдер Swiper используется с эффектом coverflow
+  и бесконечной прокруткой (loop: true). Согласно дизайну текущий слайд
+  отображается в центре, а по бокам видны предыдущий и следующий слайды.
+
+  Получившийся слайдер неккорректно работает с тремя слайдами.
+  Эскпериментальным путём выяснено, что для корректной работы требуется
+  не менее пяти слайдов.
+
+//- (2)
+  Поэтому я решил дублировать слайды, если их количество менее пяти.

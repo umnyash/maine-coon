@@ -1,0 +1,11 @@
+mixin show-gallery(images)
+  .show-gallery&attributes(attributes)
+    .show-gallery__inner
+      ul.show-gallery__list
+        each image, index in images
+          li.show-gallery__item(class= `show-gallery__item--${index}`)
+            picture.show-gallery__image-wrapper
+              source(media='(min-width: 1280px)' srcset= `${image.laptop}, ${image.laptop} 2x`)
+              source(media='(min-width: 768px)' srcset= `${image.tablet}, ${image.tablet} 2x`)
+              img.show-gallery__image(src= image.mobile srcset= image.mobile2x alt= image.alt loading='lazy')
+    +slider-navigation(class='show-gallery__navigation')

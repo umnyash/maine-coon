@@ -1,0 +1,9 @@
+include ../../data/cat-show-gallery-tabs
+
+mixin show
+  section.show&attributes(attributes)
+    .show__inner
+      h2.show__heading.heading Питомцы
+      p.show__lead Все представители нашего питомника имеют ветеринарный паспорт с&nbsp;отметками о&nbsp;прививках и&nbsp;документ с&nbsp;родословной
+      +taber-with-show-gallery(catShowGallerTabs)(class='show__taber')
+      +button('a', 'Смотреть больше', '', '#!')(class='show__button')

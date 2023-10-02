@@ -1,0 +1,10 @@
+mixin taber-with-show-gallery(tabs)
+  .taber&attributes(attributes)
+    ul.taber__list
+      each tab in tabs
+        li.taber__tab-wrapper
+          a.taber__tab(href=`#${tab.id}`)= tab.title
+    each tab in tabs
+      section.taber__panel(id= tab.id)
+        h3.visually-hidden= tab.title
+        +show-gallery(tab.images)(class='taber__panel-slider')
