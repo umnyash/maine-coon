@@ -7,7 +7,7 @@ mixin about
         picture.about__img-wrapper
           source(media='(min-width: 1280px)' srcset='img/about/about-laptop.webp, img/about/about-laptop@2x.webp 2x')
           source(media='(min-width: 768px)' srcset='img/about/about-tablet.webp, img/about/about-tablet@2x.webp 2x')
-          img.about__image(src='img/about/about.webp' srcset='img/about/about@2x.webp 2x' alt='Пушистый рыжий мейн-кун стоит с поднятым хвостом.')
+          img.about__image(src='img/about/about.webp' srcset='img/about/about@2x.webp 2x' alt='Пушистый рыжий мейн-кун стоит с поднятым хвостом.' loading='lazy')
         ul.about__list
           li.about__item.about__item--position_left-right Легко уживается в&nbsp;семьях с&nbsp;детьми #[br.hidden.hidden--m-t] или&nbsp;другими животными
           li.about__item Выполняет команды как дрессированная собака

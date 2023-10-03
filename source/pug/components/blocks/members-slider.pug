@@ -11,5 +11,5 @@ mixin members-slider(members)
           picture.members-slider__slide-image-wrapper
             source(media='(min-width: 1280px)' srcset= `${member.laptopImage}, ${member.laptopImage2x} 2x`)
             source(media='(min-width: 768px)' srcset= `${member.tabletImage}, ${member.tabletImage2x} 2x`)
-            img.members-slider__slide-image(src= member.image srcset= `${member.image2x} 2x` alt='Фотография человека.')
+            img.members-slider__slide-image(src= member.image srcset= `${member.image2x} 2x` alt='Фотография человека.' loading='lazy')
     +slider-navigation(class='members-slider__navigation')

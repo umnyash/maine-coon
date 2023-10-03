@@ -12,5 +12,5 @@ mixin reviews-slider(reviews)
           picture.reviews-slider__slide-image-wrapper
             source(media='(min-width: 1280px)' srcset= `${review.laptopImage}, ${review.laptopImage2x} 2x`)
             source(media='(min-width: 768px)' srcset= `${review.tabletImage}, ${review.tabletImage2x} 2x`)
-            img.reviews-slider__slide-image(src= review.image srcset= `${review.image2x} 2x` alt='Фотография человека.')
+            img.reviews-slider__slide-image(src= review.image srcset= `${review.image2x} 2x` alt='Фотография человека.' loading='lazy')
     +slider-navigation(class='reviews-slider__navigation slider-navigation--look_d-l-d')
