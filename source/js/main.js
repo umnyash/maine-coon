@@ -8,4 +8,7 @@ document.querySelectorAll('.members-slider').forEach(initMembersSlider);
 document.querySelectorAll('.reviews-slider').forEach(initReviewsSlider);
 document.querySelectorAll('.show-gallery').forEach(initShowGallery);
 document.querySelectorAll('.folds').forEach(initFolds);
-document.querySelectorAll('.taber').forEach(initTaber);
+
+document.querySelectorAll('.taber').forEach((taber, index) => {
+  initTaber(taber, `taber-${index + 1}`);
+});

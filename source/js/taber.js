@@ -1,6 +1,6 @@
 import { isDownArrowEvent, isLeftArrowEvent, isRightArrowEvent } from './util.js';
 
-const initTaber = (taber) => {
+const initTaber = (taber, idPrefix) => { // (1)
   const listElement = taber.querySelector('.taber__list');
   const tabElements = Array.from(listElement.querySelectorAll('.taber__tab'));
   const panelElements = taber.querySelectorAll('.taber__panel');
@@ -9,7 +9,7 @@ const initTaber = (taber) => {
 
   tabElements.forEach((tabElement, index) => {
     tabElement.role = 'tab';
-    tabElement.id = `tab-${index + 1}`;
+    tabElement.id = `${idPrefix}-tab-${index + 1}`;
     tabElement.tabIndex = -1;
     tabElement.parentNode.role = 'presentation';
   });
@@ -84,3 +84,10 @@ const initTaber = (taber) => {
 };
 
 export { initTaber };
+
+/*
+ * Подписи к панелям (taber__panel) добавляются по id вкладок,
+ * которые генерируются автоматически. Префикс к id нужен,
+ * чтобы на странице не появились вкладки с одинаковыми id,
+ * если на странице более одного табера.
+ */
