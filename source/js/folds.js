@@ -16,7 +16,7 @@ const initFolds = (foldsElement) => {
 
     setTimeout(() => { // (2)
       foldElement.classList.toggle('folds__item--open');
-    }, 0);
+    }, 20);
 
     buttonElement.ariaExpanded = buttonElement.ariaExpanded === 'true' ? 'false' : 'true';
   });
